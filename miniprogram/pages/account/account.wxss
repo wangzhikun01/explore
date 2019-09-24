@@ -1,0 +1,70 @@
+/* pages/account/account.wxss */
+
+.head {
+    height: 50rpx;
+    border-bottom: 1px gray solid;
+}
+
+/* 月份预览 */
+
+.preview {
+    display: flex;
+    flex-wrap: nowrap;
+    border-bottom: 1px gray solid;
+}
+
+.left, .right {
+    width: 50%;
+    height: 100rpx;
+    text-align: center;
+}
+
+.left {
+    border-right: 1px black solid;
+    box-sizing: border-box;
+}
+
+/* 记账按钮 */
+
+.addbtm {
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 50%;
+    border: 1px red solid;
+    margin: auto;
+}
+
+/* 账单详情 */
+
+.data {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.data .left,.item .left{
+    display: flex;
+    justify-content:flex-end;
+}
+.left text{
+    line-height: 100rpx;
+}
+.left view{
+    width:20rpx;
+    height:20rpx;
+    border-radius: 50%;
+    background-color: gray;
+    margin:45rpx -10rpx 0 30rpx;
+}
+.item{
+    display: flex;
+    height:150rpx;
+}
+.item>view{
+    height:150rpx;
+}
+.item .left image{
+    width:60rpx;
+    height:60rpx;
+    margin-right:-30rpx;
+    background:rgb(15, 119, 189);
+}
+

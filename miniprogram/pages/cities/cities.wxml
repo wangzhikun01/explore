@@ -1,0 +1,9 @@
+
+<input placeholder="输入想要搜索的城市关键字" placeholder-style="color:#FFFFFF"></input>
+<view class="item-list">
+
+  <view class="item">
+  东城，北京，中国
+  </view>
+
+</view>

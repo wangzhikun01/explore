@@ -1,0 +1,46 @@
+<!-- 头部，可能用来展示 日历，和其他功能 -->
+<view class="head">
+
+</view>
+
+<!-- 预览：本月收入，支出 -->
+<view class="preview">
+    <view class="left">
+        <text>九月收入</text>
+        <text>0 元</text>
+    </view>
+    <view class="right">
+        <text>九月支出</text>
+        <text>10000 元</text>
+    </view>
+</view>
+
+<!-- 添加按钮 -->
+<view class="addbtm">
+
+</view>
+
+<!-- 详情 -->
+<view class="items-list">
+    <!-- 每一天的记账 -->
+    <view class="items">
+        <!-- 日期部分 -->
+        <view class="data">
+            <view class="left">
+                <text>昨天</text>
+                <view></view>
+            </view>
+            <view class="right"></view>
+        </view>
+        <!-- 具体的条目 -->
+        <view class="item">
+            <view class="left">
+                <!-- <view></view> -->
+                <image src="/images/account/food.png"></image>
+            </view>
+            <view class="right">
+                xxx 记账：
+            </view>
+        </view>
+    </view>
+</view>

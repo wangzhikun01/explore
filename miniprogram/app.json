@@ -1,0 +1,45 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/cities/cities",
+        "pages/account/account",
+        "pages/profile/profile"
+    ],
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#F6F6F6",
+        "navigationBarTitleText": "菜鸡工具",
+        "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json",
+    "usingComponents": {
+        "v-btn":"/miniprogram_npm/vant-weapp/button/index",
+        "v-field": "/miniprogram_npm/vant-weapp/field/index"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "/images/index.png",
+                "selectedIconPath": "/images/indexs.png"
+            },
+            {
+                "pagePath": "pages/account/account",
+                "text": "记账",
+                "iconPath": "/images/ac.png",
+                "selectedIconPath": "/images/acs.png"
+            },
+            {
+                "pagePath": "pages/profile/profile",
+                "text": "我的",
+                "iconPath": "/images/me.png",
+                "selectedIconPath": "/images/mes.png"
+            }
+        ],
+        "selectedColor":"#333333",
+        "color":"#d1d1d1"
+
+    }
+}

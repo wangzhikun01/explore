@@ -1,0 +1,2 @@
+1. 参考的git：https://github.com/myvin/quietweather
+2. API的使用https://dev.heweather.com/docs/getting-started/get-api-key。注册qq+拼音123

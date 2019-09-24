@@ -1,0 +1,23 @@
+/* pages/cities/cities.wxss */
+page{
+  background:rgb(37, 36, 36);
+  /* filter: blur(40rpx); */
+  padding:20rpx;
+  font-size:20px;
+}
+
+input{
+  border-bottom: 1px white solid;
+  padding:0 0 5rpx 10rpx;
+}
+
+.item{
+  height:100rpx;
+  /* background:rgb(4, 108, 204); */
+  background-image: linear-gradient(0deg,rgb(90, 87, 87),rgb(7, 7, 7));
+  border-radius: 3px;
+  margin-top:10rpx;
+  padding-left: 10rpx;
+  color:white;
+  font-size:24px;
+}

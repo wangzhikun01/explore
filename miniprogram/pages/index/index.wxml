@@ -1,0 +1,56 @@
+<!-- 定位区域，搜索城市 -->
+<view class="local">
+    <image src="/images/index/local.png"></image>
+    <text bindtap="searchCity">想看看其他城市？搜搜试试</text>
+</view>
+
+<!-- 地区，更新时间 -->
+<view class="now">
+    <view class="location">{{msg.basic.location}}区</view>
+    <view class="uptime">{{msg.update.loc}} 更新</view>
+</view>
+
+<!-- 个性化小提示 -->
+<view class="alter">
+下午好，长时间敲代码，会让你的腰间盘更加突出哦
+</view>
+
+<!-- 当前气温详情 -->
+<view class="wendu">
+    <view class="fl">
+        <text>{{msg.now.fl}}</text>
+        <text>℃</text>
+    </view>
+    <!-- 各项指标 -->
+    <view class="desc">
+        <view>
+            <view class="item">天气</view>
+            <view class="cell">{{msg.now.cond_txt}}</view>
+        </view>
+        <view>
+            <view class="item">风向</view>
+            <view class="cell">{{msg.now.wind_dir}}</view>
+        </view>
+        <view>
+            <view class="item">风力</view>
+            <view class="cell">{{msg.now.wind_sc}}</view>
+        </view>
+        <view>
+            <view class="item">湿度</view>
+            <view class="cell">{{msg.now.hum}}</view>
+        </view>
+        <!-- <view>风力：{{msg.now.wind_sc}},风向:{{msg.now.wind_dir}}</view>
+        <view>湿度：{{msg.now.hum}}</view> -->
+    </view>
+</view>
+
+<!-- 未来3天的气温预报 -->
+<!-- <view>3天预报</view> -->
+<view class="day">
+    <view class="items" wx:for="{{dayMsg.daily_forecast}}">
+    <view>{{item.date}}</view>
+    <view>{{item.tmp_min}} - {{item.tmp_max}}℃</view>
+    <view>{{item.cond_txt_d}} 转 {{item.cond_txt_n}}</view>
+    <view>{{item.wind_dir}}{{item.wind_sc}}</view>
+    </view>
+</view>

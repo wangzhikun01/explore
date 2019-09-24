@@ -1,0 +1,112 @@
+/**index.wxss**/
+page{
+    background:rgb(4, 108, 204);
+    padding:30rpx 20rpx 0;
+    box-sizing: border-box;
+}
+/* 顶部，定位区域，所搜框 */
+.local{
+    margin-left: 10%;
+    margin-right: 10%;
+    border-bottom: 1px white solid;
+    margin-bottom:20rpx;
+}
+.local image{
+    width:20px;
+    height:20px;
+    margin-right: 20rpx;
+}
+.local text{
+  font-size:18px;
+    width: 80%;
+    display: inline-block;
+    color:rgb(236, 240, 233);
+}   
+
+/* 中部，实时天气展示区域 */
+/* 地区 */
+.now{
+    display:flex;
+    justify-content: space-between;
+    color:white;
+    align-items: center;
+    margin:50rpx 0 25rpx;
+}
+.location {
+    font-size: 35px;
+    /* font-weight: 500; */
+}
+.alter{
+  font-size: 14px;
+  color:white;
+  margin:20rpx 0;
+}
+/* 温度 */
+.fl{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color:white;
+    font-size:20px;
+    padding:30rpx 0;
+}
+.fl>text:first-child{ /*温度数字*/
+    font-size: 90px;
+    
+}
+.fl>text:last-child{ /*摄氏度符号*/
+    margin-top:20rpx;
+}
+/* 各项指标 */
+.desc{
+    display: flex;
+    flex-wrap: nowrap;
+    color: white;
+    padding:10rpx 0 30rpx;
+    border-radius: 3px;
+}
+.desc>view{
+    /* font-size: 22px; */
+    font-size: 16px;
+    width:25%;
+    box-sizing: border-box;
+    /* height: 130rpx; */
+    /* line-height: 130rpx; */
+    text-align: center;
+    background:rgba(41, 40, 40, 0.671);
+}
+.item{
+    margin:0 20rpx;
+    padding:8rpx 0;
+    border-bottom: 1px black solid;
+}
+.cell{
+    font-size:24px;
+    padding-top:15rpx;
+    padding-bottom: 25rpx;
+}
+
+/* 未来的天气预报 */
+.day{
+    display: flex;
+    flex-wrap: nowrap;
+    background-image: linear-gradient(180deg,rgba(12, 12, 12, 0.623),rgba(6, 79, 121, 0.623));
+    text-align: center;
+    color:white;
+    border-radius: 3px;
+    padding-top:20rpx;
+}
+.day .items{
+    width:33.33%;
+    height:200rpx;
+    /* background-color:black; */
+}
+.items view{
+  padding-bottom:10rpx;
+}
+
+
+
+
+
