@@ -13,5 +13,7 @@ exports.main = async (event, context) => {
     location,
     key,
   }})
-  return result.data.HeWeather6[0]
+
+  // 直接返回城市列表
+  return result.data.HeWeather6[0].basic
 }
