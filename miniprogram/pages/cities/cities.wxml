@@ -1,5 +1,8 @@
 
-<input placeholder="输入想要搜索的城市关键字" placeholder-style="color:#FFFFFF"></input>
+<input
+ placeholder="输入想要搜索的城市关键字" placeholder-style="color:#FFFFFF"
+ bindinput="inputHandle" confirm-type="search" bindconfirm="searchHandle"
+ ></input>
 <view class="item-list">
 
   <view class="item">
