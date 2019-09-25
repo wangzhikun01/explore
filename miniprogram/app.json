@@ -13,6 +13,11 @@
         "navigationBarTextStyle": "black"
     },
     "sitemapLocation": "sitemap.json",
+    "permission":{
+      "scope.userLocation":{
+        "desc":"位置信息，用于获取地区"
+      }
+    },
     "usingComponents": {
         "v-btn":"/miniprogram_npm/vant-weapp/button/index",
         "v-field": "/miniprogram_npm/vant-weapp/field/index"
