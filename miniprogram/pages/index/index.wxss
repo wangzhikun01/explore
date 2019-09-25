@@ -36,6 +36,11 @@ page{
     font-size: 35px;
     /* font-weight: 500; */
 }
+.location image{
+    width:35px;
+    height:35px;
+    margin-right: 30rpx;
+}
 .alter{
   font-size: 14px;
   color:white;

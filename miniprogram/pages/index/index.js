@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    hour_wd: "关注天气，更关心你", // 按小时，来进行问候
     geo: {}, // 地理位置对象
     msg: { // 天气信息,填充默认值
       "basic": {
@@ -128,39 +129,73 @@ Page({
         }
       ]
     }
-
+  },
+  /**
+   * 主动定位当前所在地，顺便清除缓存
+   */
+  newLocal() {
+    console.log('删除缓存，重新定位')
+    wx.removeStorage({
+      key: 'localCity',
+      success: (res) =>{
+        this.getGeoInfo();
+      },
+    })
   },
   // 搜索城市页面
-  searchCity(){
+  searchCity() {
     wx.navigateTo({
-      url:'/pages/cities/cities'
+      url: '/pages/cities/cities'
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    if (options.get) {
-      console.log('页面加载时，传入 geo');
-    } else {
-      console.log('页面加载时未传入 geo');
+    this.getGeoInfo();
+  },
+  /**
+   * 获取当前位置
+   */
+  getGeoInfo() {
+    // 判断本地存储中，已经存了city信息
+    let city;
+    try {
+      city = wx.getStorageSync("localCity");
+    } catch (e) {
+      console.log('本地缓存读取失败');
+      city = null;
+    }
+    // 根据是否有缓存，来获取请求天气用的 geo 信息
+    if (city) { // 请求缓存中的城市信息
+      console.log('缓存中有上次的城市数据');
+      let geo = {
+        longitude: city.lon,
+        latitude: city.lat,
+      }
+      this.setData({
+        geo
+      })
+      this.getWeatherMsg();
+      this.getWeatherMsg('day');
+    } else { // 缓存中没有城市，根据wx 定位请求天气信息
+      console.log('缓存中没有上次的城市数据');
       wx.getLocation({ // 获取位置
         success: (res) => {
           this.setData({
             geo: res
           });
           this.getWeatherMsg();
-          this.getWeatherMsg('day')
+          this.getWeatherMsg('day');
         }
       })
     }
-
   },
   /**
    * 从服务端获取天气信息的函数
    */
   getWeatherMsg(rtype) {
-    console.log('获取温度')
+    // console.log('获取温度')
     wx.cloud.callFunction({
       name: "weather",
       data: {
@@ -169,7 +204,7 @@ Page({
         rtype,
       }
     }).then(r => {
-      console.log('获取天气的类型：', rtype, r);
+      // console.log('获取天气的类型：', rtype, r);
       if (rtype) { // rtype进行了传入，预期是获取三天的预告
         this.setData({
           dayMsg: (r.result)[0]
@@ -181,55 +216,38 @@ Page({
       }
     })
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
     // 展示时刷新页面天气
-    // 如果是从城市搜索页面回来的，则会更新本业geo对象，刷新为新的地区
-    this.getWeatherMsg();
-    this.getWeatherMsg('day')
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
+    this.getGeoInfo();
+    // 刷新问候语
+    let hour = new Date().getHours();
+    let m;
+    if (hour <= 3 || hour >= 22) { // 熬夜
+      m = '熬夜写代码，会导致第二天精神憔悴哦~'
+    } else if (hour > 3 && hour <= 5) { // 凌晨
+      m = '你也想看看凌晨的洛杉矶吗？'
+    } else if (hour > 5 && hour <= 7) { // 清晨
+      m = '早起的鸟儿有虫吃，快去吃个油条，喝完豆腐脑吧'
+    } else if (hour > 7 && hour <= 10) { // 上午
+      m = '上午工作起来神清气爽，我当公司是我家'
+    } else if (hour > 10 && hour <= 13) { // 中午，午饭，午休
+      m = '来和妲己一起玩耍吗？'
+    } else if (hour > 13 && hour <= 17) { // 下午
+      m = '我不管，我要喝手磨咖啡'
+    } else if (hour > 17 && hour <= 18) { // 晚饭
+      m = 'emmm……吃完饭去哪儿看电影呢？'
+    } else if (hour > 18 && hour < 22) { //黄金时间
+      m = '约会被拒绝了，还是在家老老实实看新闻联播吧'
+    } else { // 使用默认语句，不做修改
+      m = '关注天气，更关心你'
+    }
+    this.setData({
+      hour_wd: m
+    })
 
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
-  }
 })
