@@ -12,6 +12,7 @@ exports.main = async (event, context) => {
   let result = await axios.get(url,{params:{
     location,
     key,
+    lang:'zh'
   }})
 
   // 直接返回城市列表
