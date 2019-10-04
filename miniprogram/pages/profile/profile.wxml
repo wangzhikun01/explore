@@ -1,2 +1,61 @@
-<!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<!-- 头像，昵称，预期职位 -->
+<view class="head">
+  <view>
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view>
+    <view>王志坤</view>
+    <view class="wt">web前端开发工程师</view>
+  </view>
+</view>
+<!-- 简介，年龄，经验，学历，自我说明 -->
+<view class="part info">
+  <view>离职 - 考虑机会</view>
+  <view class="items">
+    <view class="item">
+      <text class="iconfont icon-jingyan"></text>
+      <text>4年经验</text>
+    </view>
+    <view class="item">
+      <text class="iconfont .icon-xueshimao"></text>
+      <text>本科</text>
+    </view>
+    <view class="item">
+      <text class="iconfont icon-nianling"></text>
+      <text>26岁</text>
+    </view>
+  </view>
+  <view>
+    精通JavaScript，HTML，css，精通vue，熟练掌握node，会微信开发，H5开发，有质量意识，反正就是很牛逼，招我绝对不亏
+  </view>
+</view>
+<!-- 掌握技能 -->
+<view class="part skill">
+  <view>javas</view>
+  <view>html</view>
+  <view>vue</view>
+  <view>css</view>
+</view>
+<!-- 工作经历 -->
+<view class="part works">
+  <view class="work">
+    <!-- 公司，事件，岗位，工作内容 -->
+    <view class="w-name">今日头条</view>
+    <view class="w-time">2017.12 - 2019.05</view>
+    <view class="w-title">测试开发</view>
+    <view class="w-detail">负责组内同学招聘，测试平台研发，code review，TODO定制，流程管理，啥都干，就是牛逼</view>
+  </view>
+  <view class="work">
+    <!-- 公司，事件，岗位，工作内容 -->
+    <view class="w-name">今日头条</view>
+    <view class="w-time">2017.12 - 2019.05</view>
+    <view class="w-title">测试开发</view>
+    <view class="w-detail">负责组内同学招聘，测试平台研发，code review，TODO定制，流程管理，啥都干，就是牛逼</view>
+  </view>
+</view>
+<!-- 教育经历 -->
+<view class="part education">
+<view>2011-2015</view>
+<view>中北大学</view>
+<view>本科</view>
+</view>

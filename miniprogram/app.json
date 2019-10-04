@@ -1,9 +1,9 @@
 {
     "pages": [
+        "pages/profile/profile",
         "pages/index/index",
         "pages/cities/cities",
-        "pages/account/account",
-        "pages/profile/profile"
+        "pages/account/account"
     ],
     "window": {
         "backgroundColor": "#F6F6F6",
@@ -30,12 +30,7 @@
                 "iconPath": "/images/index.png",
                 "selectedIconPath": "/images/indexs.png"
             },
-            {
-                "pagePath": "pages/account/account",
-                "text": "记账",
-                "iconPath": "/images/ac.png",
-                "selectedIconPath": "/images/acs.png"
-            },
+            
             {
                 "pagePath": "pages/profile/profile",
                 "text": "我的",

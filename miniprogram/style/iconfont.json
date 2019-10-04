@@ -1,0 +1,30 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1707972",
+      "name": "学士帽",
+      "font_class": "xueshimao",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "7342429",
+      "name": "年龄",
+      "font_class": "nianling",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "9464955",
+      "name": "经验",
+      "font_class": "jingyan",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    }
+  ]
+}
